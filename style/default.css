@@ -1,0 +1,96 @@
+/* --------------------------------------------
+  * 기본 스타일 */
+
+/* 셀렉션 스타일 */
+/* 마우스로 드래그 했을때 스타일 */
+/* firefox에서의 호환성을 위한 코드 */
+::-moz-selection {
+  background: #233d84;
+  color: #ffffff;
+}
+
+/* 일반 브라우저에서 드래그 스타일 지정 */
+::selection {
+  background: #233d84;
+  color: #ffffff;
+}
+
+/* 루트 요소의 기본 글자크기 설정 */
+html {
+  font-size: 10px;
+  /* 앞으로 루트 기준으로 rem단위 사용할것 */
+  overflow-y: visible;
+}
+
+/* 기본 박스사이징 설정 */
+body,
+/* body 자체에도 뭔가 스타일링 할수도 있기때문에 그것을 대비함 */
+body *,
+body::before,
+body::after,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+/* 탭 하이라이트 색상 */
+body * {
+  -webkit-tap-highlight-color: rgba(255, 255, 200, 0.3);
+  tap-highlight-color: rgba(255, 255, 200, 0.3);
+}
+
+/* 본문 기본 폰트, 글자 크기, 굵기, 배경 색상 지정 */
+body {
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
+  font-size: 1.6rem;
+  /* 원래 기본값인 16px과 같다 */
+  font-weight: 400;
+  background-color: #fff;
+  color: #181818;
+}
+
+/* 내비게이션 내 기본 링크 스타일 */
+nav a {
+  color: inherit;
+  /* 글자색은 상속받을것 */
+  text-decoration: none;
+  /* 텍스트 꾸밈 제거 */
+}
+
+/* a 요소 내 이미지에 발생하는 갭 제거 */
+a img {
+  vertical-align: middle;
+  /* 인라인의 모습을 유지하면서 갭을 제거하려면 vertical-align속성 사용 */
+}
+
+/* fieldset 요소의 기본 스타일 리셋 */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* 포커스 시 아웃라인 커스텀 디자인 */
+:focus {
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 4px rgba(40, 70, 204, 0.9);
+}
+
+/* 버튼 요소의 커서 및 테두리 제거 */
+.button {
+  cursor: pointer;
+  border: none;
+  /* border: 0; 도 가능 */
+}
+
+button[disabled] {
+  /* 대괄호 = 속성선택자 */
+  cursor: not-allowed;
+}
+
+/* 링크 요소의 밑줄 및 글자 색상 재 정의 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
