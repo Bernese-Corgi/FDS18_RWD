@@ -1,0 +1,48 @@
+/* --------------------------------------------
+  * 공통 클래스 */
+
+/* 숨김 제목 및 콘텐츠 */
+.a11y-hidden,
+legend {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  /* 음수마진을 이용한 트릭 */
+}
+
+/* 목록 요소 기본 스타일 초기화 */
+.reset-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* 반응형 콘텐츠 */
+.respons {
+  /* 반응형으로 만들때 이 클래스를 지정해주면 됨 */
+  max-width: 100%;
+  height: auto;
+}
+
+/* 반응형 콘텐츠 ( 가로/세로 100% 유형 )*/
+.respons-same {
+  /* 비디오는 이걸로 처리, 컨텐츠의 종류에 따라 다르게 스타일 지정 */
+  width: 100%;
+  height: 100%;
+}
+
+/* RoundBar 디자인 */
+.round-bar {
+  /* 반복되는 roundbar를 미리 설계 */
+  display: inline-block;
+  background-color: #24388d;
+  border-radius: 20px;
+  color: #c8cde2;
+  font-size: 11px;
+  padding: 3px 6px;
+}
