@@ -55,15 +55,14 @@ body {
     display: inline-block;
     width: 100%;
     height: 100%;
-    background: violet url(./../images/button-navigation.svg) no-repeat 50% 50%;
-
+    background: url(./../images/button-navigation.svg) no-repeat 50% 50%;
   }
 
   /* 모바일 내비게이션 */
   .app-navigation {
     transform: translateX(105vw);
-    backdrop-filter: blur(5px);
     /* 조금 더 여유있게 105정도 준다 */
+    backdrop-filter: blur(5px);
     background: hsla(225, 57%, 10%, 0.9);
     color: #fefefe;
     position: fixed;
