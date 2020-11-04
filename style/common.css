@@ -38,8 +38,72 @@ body {
   display: block;
 }
 
-@media all and (max-width: 767px) {
+/* 공통 푸터 */
+.app-footer-container {
+  background: var(--theme-dark);
+  color: var(--theme-disable);
+}
 
+.app-footer {
+  font-size: 1.2rem;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.app-footer>* {
+  /* app-footer에 포함된 직계자손 */
+  width: 100%;
+}
+
+.footer-brand {
+  padding: 20px 0 10px;
+}
+
+.guide-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  order: -1;
+  padding: 15px 0;
+}
+
+.guide-list li {
+  margin: 0 5px;
+}
+
+.guide-list a {
+  display: block;
+  padding: 5px;
+}
+
+.address {
+  font-style: normal;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.address span {
+  margin: 10px 5px 0;
+  /* width 정해놓고 space-between 쓸수도 있지만 문제점 있음 */
+}
+
+.copyright {
+  font-size: 1.1rem;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+/*  공통 위로가기 버튼 */
+.button-goToTop {
+  background-color: transparent;
+  position: fixed;
+  padding: 0;
+}
+
+@media all and (max-width: 767px) {
   /* 모바일 헤더 */
 
   /* 햄버거 메뉴 */
@@ -111,35 +175,72 @@ body {
     /* 제자리에 돌아와있는것 */
   }
 
+  /* 모바일 푸터 */
+  .guide-list {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .address,
+  .copyright {
+    padding: 5px 0;
+  }
+  /* 모바일 위로가기 버튼 */
+  .button-goToTop {
+    bottom: 15px;
+    right: 15px;
+  }
 }
 
-
 @media all and (min-width: 768px) {
-
+  
   /* 데스크탑 헤더 */
   .app-header-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
   }
-
+  
   .app-header {
     width: 786px;
   }
-
+  
   .is-open-menu,
   .is-close-menu {
     display: none;
   }
-
+  
   /* 데스크탑 내비게이션 */
   .app-navigation ul {
     display: flex;
     flex-flow: row nowrap;
   }
-
+  
   .app-navigation li {
     margin-left: 8px;
     /* 구분선이 없고 링크들이 인접해있으므로 padding을 주면 클릭범위가 헷갈릴 수 있다. */
+  }
+  
+  /* 데스크탑 푸터 */
+  .app-footer-container {
+    position: relative;
+  }
+  
+  .app-footer {
+    width: 740px;
+    margin: 0 auto;
+  }
+  
+  .app-footer-container::before {
+    content: "";
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid currentColor;
+  }
+  /* 데스크탑 위로가기 버튼 */
+  .button-goToTop {
+    bottom: 50px;
+    right: 50px;
   }
 }
