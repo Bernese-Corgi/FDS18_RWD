@@ -1,22 +1,29 @@
+/* 기본 레이아웃 */
 body {
   display: flex;
   flex-flow: row wrap;
+  /*  */
 }
 
 .app-header-container,
 .app-main,
 .app-footer-container {
   width: 100%;
+  /* body를 flex row wrap 속성을 주면 겉으로 큰 변화가 없어 보이지만,
+  컨테이너가 width를 100% 갖게 하고 모자르면 줄바꿈하도록 설계하면 유연한 레이아웃이 가능 
+  앱헤더 컨테이너의 order 값을 변화시키면 header의 위치가 footer 밑으로 내려갈것 */
 }
 
 /* 헤더 */
 /* 공통 헤더 */
 .app-header-container {
   /* background-color: gold; */
+  /* order: 1; */
 }
 
 .app-header {
   background-color: #fff;
+  /* brand, nav / is-open-menu 를 수평정렬*/
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -112,28 +119,37 @@ body {
     height: 50px;
     padding: 18px 16px;
     background-color: transparent;
+    /* .ir 이 보이게 하기 위해 배경색은 투명처리 */
     padding: 0;
   }
 
   .is-open-menu .ir {
     display: inline-block;
+    /* span요소이므로 inline-block 지정 */
     width: 100%;
     height: 100%;
+    /* 부모영역 크기 중 컨텐트박스의 100% 차지 */
     background: url(./../images/button-navigation.svg) no-repeat 50% 50%;
+    /* 정가운데 오게 하려면 50% 50% */
   }
 
   /* 모바일 내비게이션 */
   .app-navigation {
     transform: translateX(105vw);
-    /* 조금 더 여유있게 105정도 준다 */
+    /* -> 조금 더 여유있게 105정도 준다 */
+    
     backdrop-filter: blur(5px);
     background: hsla(225, 57%, 10%, 0.9);
     color: #fefefe;
+    
     position: fixed;
     top: 0;
     left: 0;
+    /* -> width값 없이 t0, l0, r0, b0 설정하면 강제로 잡아 늘린것처럼 되어 화면 전체를 쓰게 된다.
+    firefox에서 에러가 나기도 해서 w100vw로 지정하는게 더 확실한 방법 */
     width: 100vw;
     height: 100vh;
+    /* ->뷰포트의 100%를 쓰는 속성 */
     transition: all 0.2s;
     padding-top: 66px;
   }
@@ -184,6 +200,7 @@ body {
   .copyright {
     padding: 5px 0;
   }
+
   /* 모바일 위로가기 버튼 */
   .button-goToTop {
     bottom: 15px;
@@ -192,44 +209,48 @@ body {
 }
 
 @media all and (min-width: 768px) {
-  
+
   /* 데스크탑 헤더 */
   .app-header-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    /* app-header를 가운데 정렬, auto margin을 활용할 수도 있다. */
   }
-  
+
   .app-header {
     width: 786px;
+    /* 데스크탑에서는 헤더가 786px만 차지 */
   }
-  
+
   .is-open-menu,
   .is-close-menu {
     display: none;
+    /* 데스크탑에서는 사용하지 않는 요소 */
   }
-  
+
   /* 데스크탑 내비게이션 */
   .app-navigation ul {
     display: flex;
     flex-flow: row nowrap;
+
   }
-  
+
   .app-navigation li {
     margin-left: 8px;
     /* 구분선이 없고 링크들이 인접해있으므로 padding을 주면 클릭범위가 헷갈릴 수 있다. */
   }
-  
+
   /* 데스크탑 푸터 */
   .app-footer-container {
     position: relative;
   }
-  
+
   .app-footer {
     width: 740px;
     margin: 0 auto;
   }
-  
+
   .app-footer-container::before {
     content: "";
     position: absolute;
@@ -238,6 +259,7 @@ body {
     width: 100%;
     border-top: 1px solid currentColor;
   }
+
   /* 데스크탑 위로가기 버튼 */
   .button-goToTop {
     bottom: 50px;

@@ -1,0 +1,81 @@
+/* 공통 음료 목록 */
+.ediya-menu {
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* 공통 음료 아이템 */
+.ediya-menu__item {
+  width: 100%;
+  background-color: var(--theme-bright2);
+  /* sass로 더 간단하게 가능 */
+  margin-top: 20px;
+  height: 400px;
+}
+
+.ediya-menu__item:first-child {
+  margin-top: 0;
+}
+
+.ediya-menu__item [role="button"] {
+  display: block;
+  /* 클릭범위 넓히기 */
+  /* background: lightgray; */
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.ediya-menu figure {
+  margin: 0;
+  /* agent style 초기화 */
+  padding: 20px 0 40px;
+  text-align: center;
+  /* 모두 가운데정렬 */
+  margin-bottom: 20px;
+}
+
+.ediya-menu__item img {
+  transform: scale(0.85);
+  transition: all 0.3s;
+  /* scale 값이 변하면  */
+}
+
+.ediya-menu__item [role="button"]:hover img {
+  transform: scale(1);
+}
+
+@media all and (max-width: 767px) {
+
+  /* 모바일 음료 목록 */
+  .ediya-menu {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+}
+
+@media all and (min-width: 768px) {
+
+  /* 데스크탑 음료 목록 */
+  .ediya-menu {
+    width: 740px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    /* background: gold;  */
+  }
+
+  .ediya-menu__item {
+    width: 360px;
+    height: 400px;
+  }
+
+  .ediya-menu__item:nth-child(2) {
+    margin-top: 0;
+  }
+}
