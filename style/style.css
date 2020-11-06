@@ -11,11 +11,12 @@
 /* 공통영역 _ header, footer */
 @import url(./common.css);
 /* 홈 페이지 */
-@import url(./home.css);
+@import url(./home\ copy.css);
 /* 로그인 페이지 */
 @import url(./member.css);
 /* 음료 페이지 */
 @import url(./beverage.css);
 /* 공지사항 페이지 */
 @import url(./news.css);
-
+/* 수상내역 페이지 */
+@import url(./award.css);
